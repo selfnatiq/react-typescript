@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Switch, Route } from 'react-router-dom'
+import { ReactQueryDevtools } from 'react-query/devtools'
+import Home from './pages/Home'
+import Posts from './pages/Posts'
+import Post from './pages/Post'
+import TodoList from './pages/TodoList'
+import UserList from './pages/UserList'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App: React.FC = () => {
+	return (
+		<>
+			<div className="container py-3">
+				<Switch>
+					<Route exact path="/" component={Home} />
+					<Route path="/posts" component={Posts} />
+					<Route path="/post/:id" component={Post} />
+					<Route path="/todos" component={TodoList} />
+					<Route path="/users" component={UserList} />
+				</Switch>
+			</div>
+			<ReactQueryDevtools initialIsOpen={false} />
+		</>
+	)
 }
 
-export default App;
+export default App

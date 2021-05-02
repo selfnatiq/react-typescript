@@ -6,6 +6,7 @@ import Posts from './pages/Posts'
 import Post from './pages/Post'
 import TodoList from './pages/TodoList'
 import UserList from './pages/UserList'
+import NotFound from './pages/404'
 
 const App: React.FC = () => {
 	return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
 					<Route path="/post/:id" component={Post} />
 					<Route path="/todos" component={TodoList} />
 					<Route path="/users" component={UserList} />
+					<Route path="*" component={NotFound} />
 				</Switch>
 			</div>
 			<ReactQueryDevtools initialIsOpen={false} />

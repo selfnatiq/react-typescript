@@ -5,14 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 
-const queryClient = new QueryClient({
-	defaultOptions: {
-		queries: {
-			// stay fresh for 1 hour
-			staleTime: 60 * 60 * 1000,
-		},
-	},
-})
+const queryClient = new QueryClient()
 
 ReactDOM.render(
 	<React.StrictMode>
